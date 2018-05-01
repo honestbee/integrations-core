@@ -2,4 +2,4 @@
 
 ## 1.0.0 / Unreleased
 
-* [FEATURE] adds `datadog-checks-tests-helper`
+* [FEATURE] adds `datadog_checks_tests_helper`
