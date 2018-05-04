@@ -1,5 +1,12 @@
 # CHANGELOG - tomcat
 
+1.1.0 / Unreleased
+==================
+
+### Changes
+
+* [Update] Update auto_conf template.
+
 1.0.1 / 2017-11-21
 ==================
 
