@@ -84,12 +84,12 @@ def setup_couchbase():
         raise Exception("couchbase bucket creation timed out!")
 
     # time for couchbase to generate stats that we can collect
-    sleep(45)
+    sleep(80)
 
 
 # wait for couchbase to start
 def wait_for_couchbase_container():
-    for i in xrange(60):
+    for i in xrange(120):
         status_args = [
             'docker', 'exec',
             'couchbase-standalone',
@@ -107,7 +107,7 @@ def wait_for_couchbase_container():
 
 # wait for couchbase to initialize
 def wait_for_couchbase_init():
-    for i in xrange(60):
+    for i in xrange(100):
         r = requests.get('{0}/pools/default'.format(URL), auth=(USER, PASSWORD))
         if r.status_code == requests.codes.ok:
             return True
@@ -119,7 +119,7 @@ def wait_for_couchbase_init():
 
 # wait for couchbase to create the 'default' bucket
 def wait_for_bucket(bucket_name):
-    for i in xrange(60):
+    for i in xrange(80):
         status_args = [
             'docker', 'exec',
             'couchbase-standalone',
